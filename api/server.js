@@ -26,7 +26,7 @@ module.exports = class StartServer {
     this.server.use(express.json());
     this.server.use(morgan("combined"));
     this.server.use(express.static("public"));
-    this.server.use(cors({ origin: `http://localhost:${process.env.PORT}` }));
+    this.server.use(cors());
   }
 
   initTodoRoutes() {
