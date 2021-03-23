@@ -113,7 +113,9 @@ module.exports = class todoControllers {
       if (!todoList.length) {
         return res.status(404).json({ message: "Category not found" });
       }
-      return res.status(200).json(todoList);
+      return res
+        .status(200)
+        .json(todoList.sort((a, b) => new Date(b.date) - new Date(a.date)));
     } catch (err) {
       next(err);
     }
