@@ -16,7 +16,6 @@ todoRouter.get("/", todoControllers.getTodoList);
 todoRouter.patch(
   "/:id",
   todoControllers.checkTodoInList,
-  todoControllers.checkDataExist,
   todoControllers.validateUpdateTodo,
   todoControllers.updateTodo
 );
